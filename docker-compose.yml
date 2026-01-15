@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: audio-transcript-app
+    restart: unless-stopped
+    ports:
+      - "5578:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=file:/app/prisma/dev.db
+    env_file:
+      - .env
+    volumes:
+      # Map uploads folder to host
+      - ./public/uploads:/app/public/uploads
+      # Map prisma folder to host to persist SQLite database
+      - ./prisma:/app/prisma

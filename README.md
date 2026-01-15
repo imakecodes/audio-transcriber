@@ -66,6 +66,20 @@ Uma aplicação moderna e elegante para transcrição de áudio alimentada por I
 6. **Acesse:**
    Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
+## 🐳 Docker (Produção)
+
+Para rodar a aplicação em um container Docker otimizado para produção:
+
+1. **Construa e inicie o container:**
+   ```bash
+   docker-compose up -d --build
+   ```
+
+2. **Acesse:**
+   A aplicação estará disponível em [http://localhost:5578](http://localhost:5578).
+
+   *Nota: O banco de dados (`prisma/dev.db`) e os arquivos de upload (`public/uploads`) são persistidos automaticamente através de volumes mapeados.*
+
 ## 📂 Estrutura do Projeto
 
 - `/src/app`: Páginas e rotas da API.
