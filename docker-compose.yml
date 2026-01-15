@@ -14,6 +14,6 @@ services:
       - .env
     volumes:
       # Map uploads folder to host
-      - ./public/uploads:/app/public/uploads
+      - ./uploads:/app/public/uploads
       # Map prisma folder to host to persist SQLite database
       - ./prisma:/app/prisma
